@@ -39,7 +39,7 @@ export default function Dashboard() {
     const e = validate();
     if (Object.keys(e).length) { setErrors(e); return; }
     setErrors({});
-    await fetch("http://localhost:5000/api/customers", {
+    await fetch("https://crm-ls2y.onrender.com/api/customers", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify(form),
@@ -50,7 +50,7 @@ export default function Dashboard() {
   };
 
   const del = async (id) => {
-    await fetch(`http://localhost:5000/api/customers/${id}`, {
+    await fetch(`https://crm-ls2y.onrender.com/api/customers/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
