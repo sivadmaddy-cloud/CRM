@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   const load = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/customers", {
+      const res = await fetch("https://crm-ls2y.onrender.com/api/customers", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.status === 401) { navigate("/"); return; }
